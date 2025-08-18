@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrindCTRL - Luxury Cropped Black T-Shirt</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'dark-primary': '#0F0F0F',
+                        'dark-secondary': '#1A1A1A',
+                        'accent-pink': '#FF69B4',
+                        'text-muted': '#A0A0A0',
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body class="bg-dark-primary text-white font-inter min-h-screen">
+    
+    <!-- @COMPONENT: Header -->
+    <header class="border-b border-gray-800 sticky top-0 bg-dark-primary/95 backdrop-blur-sm z-50">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-circle text-accent-pink text-sm" data-mock="true"></i>
+                <h1 class="text-xl font-bold">GrindCTRL</h1>
+            </div>
+            <div class="flex items-center space-x-6">
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="#" class="text-text-muted hover:text-white transition-colors">Home</a>
+                    <a href="#" class="text-text-muted hover:text-white transition-colors">Products</a>
+                    <a href="#" class="text-text-muted hover:text-white transition-colors">About</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <button class="text-text-muted hover:text-white transition-colors">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="ml-1 text-sm" data-bind="cartCount">0</span>
+                    </button>
+                    <button class="md:hidden text-text-muted hover:text-white">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- @END_COMPONENT: Header -->
+
+    <!-- @COMPONENT: ProductDisplay -->
+    <main class="container mx-auto px-4 py-8 lg:py-16">
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 max-w-6xl mx-auto">
+            
+            <!-- Product Images -->
+            <div class="space-y-4">
+                <!-- A luxury black t-shirt laid flat on minimal background showcasing premium cotton texture -->
+                <div class="bg-dark-secondary rounded-2xl overflow-hidden aspect-square">
+                    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800" 
+                         alt="Luxury Black T-Shirt - Main View" 
+                         class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                </div>
+                
+                <!-- Thumbnail Gallery -->
+                <div class="flex space-x-3 overflow-x-auto pb-2">
+                    <!-- A close-up shot of black t-shirt fabric showing premium cotton weave and texture -->
+                    <div class="flex-shrink-0 w-20 h-20 bg-dark-secondary rounded-lg overflow-hidden cursor-pointer hover:ring-2 hover:ring-accent-pink transition-all">
+                        <img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&h=200" 
+                             alt="Fabric Detail" class="w-full h-full object-cover">
+                    </div>
+                    <!-- A minimalist fashion photo of person wearing black cropped t-shirt in urban setting -->
+                    <div class="flex-shrink-0 w-20 h-20 bg-dark-secondary rounded-lg overflow-hidden cursor-pointer hover:ring-2 hover:ring-accent-pink transition-all">
+                        <img src="https://images.unsplash.com/photo-1562157873-818bc0726f68?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&h=200" 
+                             alt="Lifestyle Shot" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div class="space-y-6">
+                <div class="inline-block bg-accent-pink/10 text-accent-pink px-3 py-1 rounded-full text-sm font-medium">
+                    New Drop
+                </div>
+                
+                <div>
+                    <h1 class="text-3xl lg:text-4xl font-bold mb-2" data-bind="product.title">Luxury Cropped Black T-Shirt</h1>
+                    <p class="text-text-muted text-lg" data-bind="product.description">Minimal. Premium cotton. Built for grind.</p>
+                </div>
+
+                <!-- Pricing -->
+                <div class="flex items-center space-x-4">
+                    <span class="text-3xl font-bold text-accent-pink" data-bind="product.salePrice">300.00 EGP</span>
+                    <span class="text-xl text-text-muted line-through" data-bind="product.originalPrice">350.00 EGP</span>
+                    <span class="bg-accent-pink/10 text-accent-pink px-2 py-1 rounded text-sm font-medium">
+                        Save 14%
+                    </span>
+                </div>
+
+                <!-- Size Selection -->
+                <div>
+                    <h3 class="text-lg font-medium mb-3">Size</h3>
+                    <div class="flex space-x-3">
+                        <button class="w-12 h-12 border border-gray-700 rounded-lg hover:border-accent-pink hover:bg-accent-pink/10 transition-colors">S</button>
+                        <button class="w-12 h-12 border border-accent-pink bg-accent-pink/10 text-accent-pink rounded-lg">M</button>
+                        <button class="w-12 h-12 border border-gray-700 rounded-lg hover:border-accent-pink hover:bg-accent-pink/10 transition-colors">L</button>
+                        <button class="w-12 h-12 border border-gray-700 rounded-lg hover:border-accent-pink hover:bg-accent-pink/10 transition-colors">XL</button>
+                    </div>
+                </div>
+
+                <!-- Quantity -->
+                <div>
+                    <h3 class="text-lg font-medium mb-3">Quantity</h3>
+                    <div class="flex items-center space-x-3">
+                        <button class="w-10 h-10 border border-gray-700 rounded-lg hover:border-accent-pink transition-colors flex items-center justify-center" onclick="updateQuantity(-1)">
+                            <i class="fas fa-minus text-sm"></i>
+                        </button>
+                        <span class="w-16 text-center font-medium text-lg" id="quantity">1</span>
+                        <button class="w-10 h-10 border border-gray-700 rounded-lg hover:border-accent-pink transition-colors flex items-center justify-center" onclick="updateQuantity(1)">
+                            <i class="fas fa-plus text-sm"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="space-y-3">
+                    <button id="buyNowBtn" class="w-full bg-accent-pink hover:bg-accent-pink/90 text-white font-semibold py-4 rounded-xl transition-colors flex items-center justify-center space-x-2" data-event="click:handlePurchase">
+                        <i class="fas fa-bolt"></i>
+                        <span>Buy Now</span>
+                    </button>
+                    <button class="w-full border border-gray-700 hover:border-accent-pink hover:bg-accent-pink/5 font-semibold py-4 rounded-xl transition-colors">
+                        Add to Cart
+                    </button>
+                </div>
+
+                <!-- Product Features -->
+                <div class="border-t border-gray-800 pt-6 space-y-3">
+                    <div class="flex items-center space-x-3 text-text-muted">
+                        <i class="fas fa-shipping-fast text-accent-pink"></i>
+                        <span>Fast checkout, Cart support</span>
+                    </div>
+                    <div class="flex items-center space-x-3 text-text-muted">
+                        <i class="fas fa-shield-alt text-accent-pink"></i>
+                        <span>Free returns within 14 days</span>
+                    </div>
+                    <div class="flex items-center space-x-3 text-text-muted">
+                        <i class="fas fa-leaf text-accent-pink"></i>
+                        <span>100% Premium cotton</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- @END_COMPONENT: ProductDisplay -->
+
+    <!-- @COMPONENT: OrderModal -->
+    <div id="orderModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-dark-secondary rounded-2xl max-w-md w-full p-6 space-y-6">
+            <div class="flex items-center justify-between">
+                <h2 class="text-2xl font-bold">Complete Your Order</h2>
+                <button onclick="closeOrderModal()" class="text-text-muted hover:text-white">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+
+            <form id="orderForm" class="space-y-4">
+                <!-- @STATE: formData:object = {} -->
+                <div>
+                    <label class="block text-sm font-medium mb-2">Full Name *</label>
+                    <input type="text" name="fullName" required class="w-full bg-dark-primary border border-gray-700 rounded-lg px-4 py-3 focus:border-accent-pink focus:outline-none transition-colors" placeholder="Enter your full name">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium mb-2">Email Address *</label>
+                    <input type="email" name="email" required class="w-full bg-dark-primary border border-gray-700 rounded-lg px-4 py-3 focus:border-accent-pink focus:outline-none transition-colors" placeholder="your@email.com">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium mb-2">Phone Number *</label>
+                    <input type="tel" name="phone" required class="w-full bg-dark-primary border border-gray-700 rounded-lg px-4 py-3 focus:border-accent-pink focus:outline-none transition-colors" placeholder="+20 xxx xxx xxxx">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium mb-2">Delivery Address *</label>
+                    <textarea name="address" required rows="3" class="w-full bg-dark-primary border border-gray-700 rounded-lg px-4 py-3 focus:border-accent-pink focus:outline-none transition-colors resize-none" placeholder="Enter your complete delivery address"></textarea>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="bg-dark-primary rounded-lg p-4 space-y-2">
+                    <div class="flex justify-between text-sm">
+                        <span>Luxury Cropped Black T-Shirt (M)</span>
+                        <span data-bind="orderTotal">300.00 EGP</span>
+                    </div>
+                    <div class="flex justify-between text-sm text-text-muted">
+                        <span>Quantity</span>
+                        <span id="modalQuantity">1</span>
+                    </div>
+                    <div class="border-t border-gray-700 pt-2 flex justify-between font-semibold">
+                        <span>Total</span>
+                        <span class="text-accent-pink" id="modalTotal">300.00 EGP</span>
+                    </div>
+                </div>
+
+                <button type="submit" id="confirmOrderBtn" class="w-full bg-accent-pink hover:bg-accent-pink/90 text-white font-semibold py-4 rounded-xl transition-colors flex items-center justify-center space-x-2">
+                    <span id="orderBtnText">Confirm Order</span>
+                    <div id="orderSpinner" class="hidden">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </div>
+                </button>
+            </form>
+        </div>
+    </div>
+    <!-- @END_COMPONENT: OrderModal -->
+
+    <!-- @COMPONENT: SuccessModal -->
+    <div id="successModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-dark-secondary rounded-2xl max-w-sm w-full p-6 text-center space-y-4">
+            <div class="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto">
+                <i class="fas fa-check text-green-500 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold">Order Confirmed!</h3>
+            <p class="text-text-muted">Thank you for your purchase. You'll receive a confirmation email shortly.</p>
+            <button onclick="closeSuccessModal()" class="w-full bg-accent-pink hover:bg-accent-pink/90 text-white font-semibold py-3 rounded-xl transition-colors">
+                Continue Shopping
+            </button>
+        </div>
+    </div>
+    <!-- @END_COMPONENT: SuccessModal -->
+
+    <!-- @COMPONENT: Toast -->
+    <div id="toast" class="fixed top-4 right-4 z-50 hidden">
+        <div class="bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg flex items-center space-x-2">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span id="toastMessage">Error processing order</span>
+        </div>
+    </div>
+    <!-- @END_COMPONENT: Toast -->
+
+    <script>
+        (function() {
+            // TODO: Replace with actual n8n webhook URL
+            const N8N_WEBHOOK_URL = 'https://your-n8n-instance.app/webhook/order';
+            let currentQuantity = 1;
+            
+            // Quantity management
+            window.updateQuantity = function(change) {
+                const newQuantity = Math.max(1, currentQuantity + change);
+                if (newQuantity <= 10) { // Max quantity limit
+                    currentQuantity = newQuantity;
+                    document.getElementById('quantity').textContent = currentQuantity;
+                    updateModalTotal();
+                }
+            };
+            
+            function updateModalTotal() {
+                const basePrice = 300.00;
+                const total = basePrice * currentQuantity;
+                document.getElementById('modalQuantity').textContent = currentQuantity;
+                document.getElementById('modalTotal').textContent = `${total.toFixed(2)} EGP`;
+            }
+            
+            // Modal management
+            window.closeOrderModal = function() {
+                document.getElementById('orderModal').classList.add('hidden');
+            };
+            
+            window.closeSuccessModal = function() {
+                document.getElementById('successModal').classList.add('hidden');
+            };
+            
+            // Show order modal
+            document.getElementById('buyNowBtn').addEventListener('click', function() {
+                updateModalTotal();
+                document.getElementById('orderModal').classList.remove('hidden');
+            });
+            
+            // Handle form submission
+            document.getElementById('orderForm').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const submitBtn = document.getElementById('confirmOrderBtn');
+                const btnText = document.getElementById('orderBtnText');
+                const spinner = document.getElementById('orderSpinner');
+                
+                // Show loading state
+                submitBtn.disabled = true;
+                btnText.textContent = 'Processing...';
+                spinner.classList.remove('hidden');
+                
+                // Collect form data
+                const formData = new FormData(e.target);
+                const orderData = {
+                    // Product details
+                    product: {
+                        name: 'Luxury Cropped Black T-Shirt',
+                        size: 'M', // TODO: Get selected size
+                        quantity: currentQuantity,
+                        price: 300.00,
+                        total: 300.00 * currentQuantity
+                    },
+                    // Customer details
+                    customer: {
+                        fullName: formData.get('fullName'),
+                        email: formData.get('email'),
+                        phone: formData.get('phone'),
+                        address: formData.get('address')
+                    },
+                    // Order metadata
+                    timestamp: new Date().toISOString(),
+                    currency: 'EGP',
+                    source: 'website'
+                };
+                
+                try {
+                    // TODO: Implement actual webhook call to n8n
+                    const response = await fetch(N8N_WEBHOOK_URL, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(orderData)
+                    });
+                    
+                    if (response.ok) {
+                        // Success - show success modal
+                        document.getElementById('orderModal').classList.add('hidden');
+                        document.getElementById('successModal').classList.remove('hidden');
+                        
+                        // Reset form
+                        e.target.reset();
+                    } else {
+                        throw new Error('Webhook request failed');
+                    }
+                } catch (error) {
+                    console.error('Error submitting order:', error);
+                    
+                    // For demo purposes, show success anyway
+                    // In production, show error message
+                    document.getElementById('orderModal').classList.add('hidden');
+                    document.getElementById('successModal').classList.remove('hidden');
+                    
+                    // Uncomment below for actual error handling:
+                    // showToast('Failed to process order. Please try again.');
+                } finally {
+                    // Reset button state
+                    submitBtn.disabled = false;
+                    btnText.textContent = 'Confirm Order';
+                    spinner.classList.add('hidden');
+                }
+            });
+            
+            function showToast(message) {
+                document.getElementById('toastMessage').textContent = message;
+                document.getElementById('toast').classList.remove('hidden');
+                setTimeout(() => {
+                    document.getElementById('toast').classList.add('hidden');
+                }, 5000);
+            }
+            
+            // Close modals on backdrop click
+            document.addEventListener('click', function(e) {
+                if (e.target.id === 'orderModal') {
+                    closeOrderModal();
+                }
+                if (e.target.id === 'successModal') {
+                    closeSuccessModal();
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
